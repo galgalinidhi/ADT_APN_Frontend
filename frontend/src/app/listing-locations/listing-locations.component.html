@@ -13,14 +13,10 @@
                     <a class="nav-link"  active href="#">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#adminModal">Admin</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Admin</a>
-                </li>
+                    <a class="nav-link" href="#"  data-bs-toggle="modal" data-bs-target="#addModal"> <i class="bi bi-plus"></i> </a></li>
             </ul>
         </div>
     </nav>
@@ -39,5 +35,111 @@
                 </div>
             </div>
         </div>
-</ngx-slick-carousel>
+    </ngx-slick-carousel>
+    <div class="modal fade adminModal" tabindex="-1" id="adminModal"  aria-hidden="true" role="dialog" aria-labelledby="adminModal" >
+        <div class="modal-dialog modal-lg  modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adminModal">Admin Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="loginForm" novalidate>
+                      <!-- Email input -->
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="email" name="email">Email address</label>
+                        <input type="email" id="email" formControlName="email" class="form-control" />
+                      </div>
+                  
+                      <!-- Password input -->
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="password" name="password">Password</label>
+                        <input type="password" id="password" formControlName="password" class="form-control" />
+                      </div>
+                  
+                      <!-- Submit button -->
+                      <button type="button" (click)="authorizeAdmin()" class="btn btn-primary btn-block mb-4" data-bs-dismiss="modal">Sign In</button>
+                      <br>
+                      <span *ngIf="adminError == 'true'" class="error text-danger">Invalid Credentials !</span>
+                      <div *ngIf="adminError == 'false' && admin == true" data-bs-dismiss="modal"></div> 
+                    </form>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade addModal" tabindex="-1" id="addModal"  aria-hidden="true" role="dialog" aria-labelledby="addModal" >
+        <div class="modal-dialog modal-lg  modal-dialog-centered ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addModal">Add Listing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="/add_listing">
+                        <div class="mb-3">
+                          <label for="longitude" class="form-label">Longitude</label>
+                          <input type="text" class="form-control" id="longitude" name="longitude">
+                        </div>
+                        <div class="mb-3">
+                          <label for="latitude" class="form-label">Latitude</label>
+                          <input type="text" class="form-control" id="latitude" name="latitude">
+                        </div>
+                        <div class="mb-3">
+                          <label for="city" class="form-label">City</label>
+                          <input type="text" class="form-control" id="city" name="city">
+                        </div>
+                        <div class="mb-3">
+                          <label for="neighbourhood" class="form-label">Neighbourhood</label>
+                          <input type="text" class="form-control" id="neighbourhood" name="neighbourhood">
+                        </div>
+                        <div class="mb-3">
+                          <label for="listing_id" class="form-label">Listing ID</label>
+                          <input type="text" class="form-control" id="listing_id" name="listing_id">
+                        </div>
+                        <div class="mb-3">
+                          <label for="score_rating" class="form-label">Score Rating</label>
+                          <input type="text" class="form-control" id="score_rating" name="score_rating">
+                        </div>
+                        <div class="mb-3">
+                          <label for="score_value" class="form-label">Score Value</label>
+                          <input type="text" class="form-control" id="score_value" name="score_value">
+                        </div>
+                        <div class="mb-3">
+                          <label for="property_type" class="form-label">Property Type</label>
+                          <input type="text" class="form-control" id="property_type" name="property_type">
+                        </div>
+                        <div class="mb-3">
+                          <label for="room_type" class="form-label">Room Type</label>
+                          <input type="text" class="form-control" id="room_type" name="room_type">
+                        </div>
+                        <div class="mb-3">
+                          <label for="accomodate_count" class="form-label">Accommodate Count</label>
+                          <input type="text" class="form-control" id="accomodate_count" name="accomodate_count">
+                        </div>
+                        <div class="mb-3">
+                          <label for="bedrooms" class="form-label">Bedrooms</label>
+                          <input type="text" class="form-control" id="bedrooms" name="bedrooms">
+                        </div>
+                        <div class="mb-3">
+                          <label for="price" class="form-label">Price</label>
+                          <input type="text" class="form-control" id="price" name="price">
+                        </div>
+                        <div class="mb-3">
+                          <label for="instant_bookable" class="form-label">Instant Bookable</label>
+                          <input type="text" class="form-control" id="instant_bookable" name="instant_bookable">
+                        </div>
+                        <div class="mb-3">
+                          <label for="amenities" class="form-label">Amenities</label>
+                          <input type="text" class="form-control" id="amenities" name="amenities"></div>
+                          <button type="button" (click)="authorizeAdmin()" class="btn btn-primary btn-block mb-4" data-bs-dismiss="modal">Add Listing</button>
+                         <!--<input type="submit" value="Add Listing">-->
+                        </form>
+                      
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
 </div>
