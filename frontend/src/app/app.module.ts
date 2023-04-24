@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LookinnApiService } from './service/lookinn-api.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './homepage/homepage.component';
+import { PropertyListingsComponent } from './property-listings/property-listings.component';
 import { ListingLocationsComponent } from './listing-locations/listing-locations.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -14,6 +15,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   declarations: [
     AppComponent,
     HomepageComponent,
+    PropertyListingsComponent,
     ListingLocationsComponent,
   ],
   imports: [
