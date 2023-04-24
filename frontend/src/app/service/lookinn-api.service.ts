@@ -18,10 +18,10 @@ export class LookinnApiService {
   // }
 
   public getCities(){
-    return this.http.get(this.baseUrl+'getcities')
+    return this.http.get(this.baseUrl+'/cities/')
   }
   public getlistings(location: string){
-    return this.http.get<ListingResponse>(`${this.baseUrl}/city/Rome/listings/`);
+    return this.http.get<ListingResponse>(`${this.baseUrl}/city/Mexico City/listings/`);
   }
 }
 
