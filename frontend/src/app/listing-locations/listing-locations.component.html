@@ -25,7 +25,19 @@
         </div>
     </nav>
     <div class="col-lg-3 text-center bg-secondary" style="background-color: #111111;" style="height:80px;width:100vw"></div>
-    <div class="text-center">
-        <button class="btn btn-primary listings-button " (click)="routeToLocations()" > View Listings </button>
-    </div>
+    <ngx-slick-carousel class="carousel" 
+                        #slickModal="slick-carousel" 
+                        [config]="slideConfig" 
+                        (init)="slickInit($event)"
+                        (breakpoint)="breakpoint($event)"
+                        (afterChange)="afterChange($event)"
+                        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <div class="product-card d-flex shadow mb-4">
+                <div class="cardtext text-center col-7">
+                  <h3 (click)="routeToListings(slide.cityName)"  class="font-weight-bold">{{ slide.cityName }}</h3>
+                </div>
+            </div>
+        </div>
+</ngx-slick-carousel>
 </div>

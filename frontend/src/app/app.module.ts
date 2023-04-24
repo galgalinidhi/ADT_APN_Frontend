@@ -7,17 +7,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { LookinnApiService } from './service/lookinn-api.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ListingLocationsComponent } from './listing-locations/listing-locations.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    ListingLocationsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    SlickCarouselModule,
   ],
   providers: [LookinnApiService],
   bootstrap: [AppComponent]

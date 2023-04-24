@@ -1,0 +1,41 @@
+.slick-slider {
+    width: 88%;
+    min-height: fit-content;
+    margin-top: 10rem;
+    margin-left: 5rem;
+    background: rgb(163, 161, 161); 
+    text-align: center;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
+.slide {
+    text-align: center;
+    justify-content: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.cardtext {
+    margin-left: 4rem;
+    margin-right: 2rem;
+}
+
+.slick-track {
+    background-color: None;
+}
+    
+body .slick-prev, 
+body .slick-next {
+    height: 45px;
+    width: 40px;
+    background: #0c0c0c !important;
+    z-index: 100;
+}
+
+.container-fluid {
+    max-width: 100%;
+    background-image: url('../../assets/bg-house.jpg');
+    height: 100vh; 
+    width:100vw;
+}
