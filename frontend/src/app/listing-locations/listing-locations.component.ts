@@ -38,7 +38,7 @@ export class ListingLocationsComponent {
       let cities: {city: string }[] = data;
       cities.forEach((x) => {
         this.slides.push({
-          cityName: x.city
+          cityName: x
         });
       });
     });  

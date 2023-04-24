@@ -9,6 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ListingLocationsComponent } from './listing-locations/listing-locations.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     HttpClientModule,
     NgbModule,
     SlickCarouselModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [LookinnApiService],
   bootstrap: [AppComponent]
