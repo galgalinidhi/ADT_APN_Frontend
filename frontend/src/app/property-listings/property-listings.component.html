@@ -29,9 +29,10 @@
       class="accordion-item">
       <div class="item-header" id="headingOne">
         <h2 class="accordion-header" id="heading{{listing.id}}">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-            aria-expanded="true" aria-controls="collapseOne">
-            {{listing.name}}
+          <button class="btn btn-link" type="button" data-toggle="collapse"
+              data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+              (click)="getListingsDetails(listing.id)" data-bs-toggle='modal' data-bs-target="#detailsModal">
+                      {{listing.name}}
             <i class="fa fa-angle-down"></i>
           </button>
         </h2>
@@ -44,4 +45,63 @@
     <button class="btn btn-link" [disabled]="currentPage == totalPages"
       (click)="currentPage = currentPage + 1">Next</button>
   </div>
+  <div  class="modal fade detailsModal" tabindex="-1" id="detailsModal" role="dialog" aria-labelledby="detailsModal" >
+    <div class="modal-dialog modal-lg  modal-dialog-centered ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsModal">Details of the Listings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                  <div class="container">
+                    <form *ngIf="displayDetails == true">
+                      <div class="form-group row">
+                        <label for="neighbourhood" class="col-sm-2 col-form-label">Neighbourhood:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="neighbourhood" [(ngModel)]="listingDetails.neighbourhood" name="neighbourhood">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="price" class="col-sm-2 col-form-label">Price:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="price" [(ngModel)]="listingDetails.price" name="price">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="bedrooms" class="col-sm-2 col-form-label">Bedrooms:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="bedrooms" [(ngModel)]="listingDetails.bedrooms" name="bedrooms">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="accomodate_count" class="col-sm-2 col-form-label">Accomodate Count:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="accomodate_count" [(ngModel)]="listingDetails.accomodate_count" name="accomodate_count">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="rating" class="col-sm-2 col-form-label">Rating:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="rating" [(ngModel)]="listingDetails.rating" name="rating">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="amenities" class="col-sm-2 col-form-label">Amenities:</label>
+                        <div class="col-sm-10">
+                          <textarea class="form-control" id="amenities" [(ngModel)]="listingDetails.amenities" name="amenities"></textarea>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
 </div>
+      
+  

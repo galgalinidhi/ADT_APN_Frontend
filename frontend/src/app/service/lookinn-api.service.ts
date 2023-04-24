@@ -24,5 +24,15 @@ export class LookinnApiService {
     location = location.replace(/['"]+/g, '')
     return this.http.get<ListingResponse>(`${this.baseUrl}/city/${location}/listings/`);
   }
+
+  public listingdetails(listing_id: string): Observable<any>{
+    console.log("got listing_id:", listing_id)
+    console.log("executing lsitingDetails API-")
+    console.log(this.baseUrl+'/listingsdetails/'+listing_id)
+    return this.http.get(this.baseUrl+`/listingsdetails/${listing_id}`);
+    
+  }
+
+  
 }
 
