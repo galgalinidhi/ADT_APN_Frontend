@@ -17,7 +17,7 @@ export class LookinnApiService {
   }
 
   public getCities(){
-    return this.http.get(this.baseUrl+'getCities')
+    return this.http.get(this.baseUrl+'cities/')
   }
 }
 
