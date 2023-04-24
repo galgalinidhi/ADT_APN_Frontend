@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { LookinnApiService } from '../service/lookinn-api.service';
 import { Router } from '@angular/router';
 
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-listing-locations',
   templateUrl: './listing-locations.component.html',
@@ -10,6 +12,14 @@ import { Router } from '@angular/router';
 export class ListingLocationsComponent {
 
   slides: any[] = [];
+  
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl('')
+  });
+
+  admin = false
+  adminError:string = "false"
 
   slideConfig = {"slidesToShow": 4, "slidesToScroll": 4};
   
@@ -33,6 +43,10 @@ export class ListingLocationsComponent {
   constructor(private lookinnApi: LookinnApiService, private router: Router) {}
 
   ngOnInit() {
+    this.loginForm = new FormGroup({
+      email: new FormControl(''),
+      password: new FormControl('')
+  });
     this.lookinnApi.getCities().subscribe((data: any) => {
       console.log(data);
       let cities: {city: string }[] = data;
@@ -47,6 +61,21 @@ export class ListingLocationsComponent {
   public routeToListings(cityName: string) {
     console.log(cityName);
     this.router.navigate(['listings', cityName]);
+  }
+
+  public authorizeAdmin() {
+    let email = this.loginForm.get('email')?.value;
+    let password = this.loginForm.get('password')?.value;
+
+    if( email=="admin@test.com" && password=="admin123") {
+       this.admin = true;
+       this.adminError = "false";
+       console.log(this.admin)
+    }
+    else {
+      console.log(this.adminError)
+      this.adminError = "true";
+    }
   }
 
 }
