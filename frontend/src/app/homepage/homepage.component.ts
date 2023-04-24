@@ -22,6 +22,7 @@ export class HomepageComponent {
     fullname: new FormControl(''),
     comment: new FormControl('')
   });
+  show = false;
 
   constructor(private lookinnApi: LookinnApiService, private fb: FormBuilder, private router: Router) {}
 
@@ -41,22 +42,5 @@ export class HomepageComponent {
   public routeToLocations() {
     this.router.navigateByUrl('/locations');
   }
-
-  public authorizeAdmin() {
-    let email = this.loginForm.get('email')?.value;
-    let password = this.loginForm.get('password')?.value;
-
-    if( email=="admin@test.com" && password=="admin123") {
-      
-    }
-  }
-
-  public contactAdmin() {
-    let email = this.contactForm.get('email')?.value;
-    let fullname = this.contactForm.get('fullname')?.value;
-    let comment = this.contactForm.get('comment')?.value;
-  }
-
-
 
 }

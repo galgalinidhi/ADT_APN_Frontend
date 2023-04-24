@@ -21,7 +21,8 @@ export class LookinnApiService {
     return this.http.get(this.baseUrl+'/cities/')
   }
   public getlistings(location: string){
-    return this.http.get<ListingResponse>(`${this.baseUrl}/city/Mexico City/listings/`);
+    location = location.replace(/['"]+/g, '')
+    return this.http.get<ListingResponse>(`${this.baseUrl}/city/${location}/listings/`);
   }
 }
 

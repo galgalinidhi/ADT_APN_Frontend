@@ -6,9 +6,8 @@ import { PropertyListingsComponent } from './property-listings/property-listings
 const routes: Routes = [
    { path: 'home', component: HomepageComponent },
    { path: 'locations', component: ListingLocationsComponent },
-   { path: 'listings/:city', component: ListingLocationsComponent },
+   { path: 'listings/:city', component: PropertyListingsComponent },
    { path: '', redirectTo: '/home', pathMatch: 'full' },
-   {path: 'listings', component:PropertyListingsComponent }
 ];
 
 @NgModule({
