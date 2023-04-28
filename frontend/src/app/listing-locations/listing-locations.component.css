@@ -1,9 +1,30 @@
+.page-name{
+    margin-left: 40rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #313e1b;
+    font-family: "Montserrat"
+}
+
+.navbar-row {
+    margin-left: 20rem;
+}
+
+.nav-item{
+    color: #7395ae;
+}
+.navbar-row .nav-link{
+    color: #313E1B;
+}
+
 .slick-slider {
-    width: 88%;
+    width: 70%;
     min-height: fit-content;
+    margin:0 auto;
     margin-top: 10rem;
-    margin-left: 5rem;
-    background: rgb(163, 161, 161); 
+    /* margin-left: 5rem; */
+    background:#A7BEAE; 
     text-align: center;
     padding-left: 2%;
     padding-right: 2%;
@@ -33,31 +54,19 @@ body .slick-next {
     z-index: 100;
 }
 
-.container-fluid {
+ .container-fluid {
     max-width: 100%;
-    background-image: url('../../assets/luxe-en.jpg');
+    background-image: url('../../assets/citylist.jpeg');
     height: 100vh; 
     width:100vw;
-}
-
-.page-name{
-    margin-left: 40rem;
-    text-align: center;
-    font-weight: bold;
-    color: black;
-    font-family: "Gill Sans"
-}
-
-.navbar-row {
-    margin-left: 25rem;
-}
-
-.nav-item{
-    color: black;
-}
+    background-size: auto 100%; 
+    background-position: 50% 50% ; 
+    background-repeat: no-repeat;
+    background-color: #E7E8D1;
+} 
 
 .listings-button {
     margin-top: 20rem;
-    background-color: beige;
-    color: black;
+    background-color: black;
+    color: white;
 }
