@@ -41,6 +41,11 @@ export class LookinnApiService {
     return this.http.post(this.baseUrl+`/addListings/`, json_body); 
   }
 
+  public deleteListing(listing_id: string) {
+    return this.http.delete(this.baseUrl+`/deletelistings/${listing_id}`); 
+   
+  }
+
   
 }
 
