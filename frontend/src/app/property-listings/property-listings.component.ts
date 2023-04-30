@@ -86,6 +86,20 @@ export class PropertyListingsComponent {
     });
   }
 
+  public deleteListing(listing_id: string): void {
+    this.lookinnApi.deleteListing(String(listing_id)).subscribe(
+      (data: any) => {
+        console.log('Listing deleted successfully');
+        // Perform any additional actions after successful deletion
+      },
+      (error) => {
+        console.error('Error deleting listing:', error);
+        // Handle any errors that occur during deletion
+      }
+    );
+  }
+  
+
   public onLocationChange(location: string) {
     this.location = location;
     this.fetchListings();
@@ -150,6 +164,10 @@ export class PropertyListingsComponent {
       });
 
     }
+
+    
+
+    
 
   public authorizeAdmin() {
     let email = this.loginForm.get('email')?.value;

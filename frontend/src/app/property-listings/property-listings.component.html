@@ -144,6 +144,7 @@
                       <label for="amenities" class="form-label">Amenities</label>
                       <input type="text" formControlName="amenities" class="form-control" id="amenities" name="amenities" required placeholder="['Kitchen', 'Bath', 'patio', etc]"></div>
                       <button type="button" (click)="addNewListing()" class="btn btn-primary btn-block mb-4" data-bs-dismiss="modal" >Add Listing</button>
+                      
                     </form>
                   
               </div>
@@ -210,6 +211,7 @@
               <button type="button" class="btn btn-secondary" *ngIf="admin == true" (click)="updateListingDetails()" data-bs-dismiss="modal">
                   Save
               </button>
+              <button type="'button" (click)="deleteListing(listing_id)" *ngIf="admin == true" (click)="deleteListing(listing_id)" class="btn btn-danger" data-bs-dismiss="modal" >Delete</button>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                   Close
               </button>
