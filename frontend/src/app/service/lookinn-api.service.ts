@@ -9,7 +9,7 @@ import { ListingResponse } from '../property-listings/property-listings.componen
 })
 export class LookinnApiService {
 
-  baseUrl = 'http://127.0.0.1:8000';
+  baseUrl = 'https://arcnaray.pythonanywhere.com/';
 
   constructor(private http: HttpClient) {}
 
