@@ -1,3 +1,4 @@
+/*Archana Narayanan*/
 import { Component } from '@angular/core';
 import { LookinnApiService } from '../service/lookinn-api.service';
 import { Router } from '@angular/router';

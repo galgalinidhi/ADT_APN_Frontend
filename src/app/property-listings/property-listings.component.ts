@@ -1,3 +1,4 @@
+
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LookinnApiService } from '../service/lookinn-api.service';
@@ -73,7 +74,7 @@ export class PropertyListingsComponent {
     // Fetch the property listings for the location from the URL
     this.fetchListings();
   }
-
+/*Nidhi Galgali*/
   public fetchListings() {
     this.lookinnApi.getlistings(this['location']).subscribe({
       next: (value: ListingResponse) => {
@@ -85,7 +86,7 @@ export class PropertyListingsComponent {
       }
     });
   }
-
+/*Preethi Sivakumar*/
   public deleteListing(listing_id: string): void {
     this.lookinnApi.deleteListing(String(listing_id)).subscribe(
       (data: any) => {
@@ -105,6 +106,7 @@ export class PropertyListingsComponent {
     this.fetchListings();
   }
   
+  /*Preethi Sivakumar*/
   public getListingsDetails(listingId: number) {
         let listing_id = String(listingId);
         this.lookinnApi.listingdetails(listing_id).subscribe((data: any) => {
@@ -115,6 +117,7 @@ export class PropertyListingsComponent {
         });
     }
 
+    /*Archana Narayanan*/
     public updateListingDetails() {
 
       let json_data = {
@@ -139,6 +142,7 @@ export class PropertyListingsComponent {
 
     }
 
+    /*Archana Narayanan*/
     public addNewListing() {
 
       let json_data = {
@@ -167,7 +171,7 @@ export class PropertyListingsComponent {
 
     
 
-    
+    /*Archana Narayanan*/
 
   public authorizeAdmin() {
     let email = this.loginForm.get('email')?.value;
